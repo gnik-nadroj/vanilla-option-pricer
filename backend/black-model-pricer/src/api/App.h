@@ -1,6 +1,7 @@
 #pragma once
 #include <cpprest/json.h>
-#include "Router.h"
+#include <PricingServer.h>
+#include <Router.h>
 
 namespace app {
 	void StartServer(const utility::string_t& port);

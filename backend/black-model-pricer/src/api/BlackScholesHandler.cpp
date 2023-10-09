@@ -1,5 +1,5 @@
-#include "BlackScholesHandler.h"
-#include "BlackScholes.h"
+#include <BlackScholesHandler.h>
+#include <BlackScholes.hpp>
 
 std::map<utility::string_t, utility::string_t> BlackScholesHandler::getReqQueryStringMap(const web::http::http_request& req){
 	const utility::string_t requestQueryString = req.absolute_uri().query();

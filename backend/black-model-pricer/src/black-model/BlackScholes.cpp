@@ -1,7 +1,7 @@
-#include "BlackScholes.hpp"
+#include <BlackScholes.hpp>
 #include <iostream>
 #include <cmath>
-#include "utils.h"
+#include <utils.h>
 
 
 std::pair<double, double> BlackScholes::getD1AndD2(double strike, double spot, double interestRate, double volatility, double timeToMaturity)
