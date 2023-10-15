@@ -24,6 +24,14 @@ ENV SALT_ROUND=10
 
 ENV SESSION_SECRET=Hoitt?6X6Qq7nL53PPyY7c8yek5@LXmx!DBe?CAT
 
+ENV MYSQL_HOST=ilzyz0heng1bygi8.chr7pe7iynqr.eu-west-1.rds.amazonaws.com
+
+ENV MYSQL_PORT=3306
+
+ENV MYSQL_ACCOUNT=g4ry9wvn925rhiy3
+
+ENV MYSQL_DATABASE=e4potn9089loarau
+
 EXPOSE 5000
 
 CMD ["npm", "start"]

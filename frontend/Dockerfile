@@ -2,10 +2,10 @@ FROM node:14
 
 WORKDIR /app
 
-copy . .
+COPY . .
 
 RUN npm install
 
 EXPOSE 3000
 
-cmd ["npm", "start"]
+CMD ["npm", "start"]
