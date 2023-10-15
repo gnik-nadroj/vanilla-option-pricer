@@ -17,7 +17,7 @@
 #include <strConstant.h>
 
 
-std::unique_ptr<PricingServer> g_http;
+//std::unique_ptr<PricingServer> g_http;
 
 //////////////////////////////////////////////////
 // STart the Server with the Given URL
@@ -40,8 +40,8 @@ void app::StartServer(const utility::string_t& port)
 	auto serverConfig = web::http::experimental::listener::http_listener_config();
 	serverConfig.set_timeout(utility::seconds(30));
 	
-	g_http = std::unique_ptr<PricingServer>(new PricingServer(addr, GenerateApiRoutes(), serverConfig));
-	g_http->Open().wait();
+	//g_http = std::unique_ptr<PricingServer>(new PricingServer(addr, GenerateApiRoutes(), serverConfig));
+	//g_http->Open().wait();
 	//---- Indicate the start and spit URI to the Console
 	ucout << utility::string_t(U("Listening for requests at: ")) << addr << std::endl;
 }
@@ -52,7 +52,7 @@ void app::StartServer(const utility::string_t& port)
 // operation...
 void app::ShutDown()
 {
-	g_http->Close().wait();
+	//g_http->Close().wait();
 	return;
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <cpprest/json.h>
-#include <PricingServer.h>
+#include <strConstant.h>
+
 #include <Router.h>
 
 namespace app {
