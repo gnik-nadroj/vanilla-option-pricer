@@ -1,0 +1,29 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+ENV API_HOST=localhost:
+
+ENV COOKIE_DURATION=86400000
+
+ENV COOKIE_NAME=psession
+
+ENV MYSQL_ENTITIES=src/model/**/*.*
+
+ENV MYSQL_ENTITIES_DIR=src/model
+
+ENV MYSQL_LOGGING=false
+
+ENV MYSQL_SYNCHRONIZE=false
+
+ENV SALT_ROUND=10
+
+ENV SESSION_SECRET=Hoitt?6X6Qq7nL53PPyY7c8yek5@LXmx!DBe?CAT
+
+EXPOSE 5000
+
+CMD ["npm", "start"]
