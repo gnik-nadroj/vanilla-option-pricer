@@ -1,13 +1,16 @@
 FROM gcc:latest
 
-RUN apt-get update
-RUN apt-get install -y libcpprest-dev
-RUN apt-get install -y cmake
-RUN apt-get install -y  libssl-dev
-WORKDIR /black-scholes-model
+WORKDIR /black-model-pricer
 
+RUN apt-get update && apt-get install -y \
+    libcpprest-dev \
+    cmake \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY . .
-RUN cmake -B build
 
-CMD ./app $PORT
+RUN cmake -B build -DCMAKE_BUILD_TYPE=Release . && \
+    cmake --build build --target all
+
+CMD ["./build/bin/main"]
