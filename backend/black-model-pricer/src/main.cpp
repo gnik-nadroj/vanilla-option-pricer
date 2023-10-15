@@ -1,7 +1,9 @@
 // SimpleServer.cpp : Defines the entry point for the console application.
 //
 
-//#include <App.h>
+#include <Router.h>
+
+#include <App.h>
 
 #include <iostream>
 
@@ -10,7 +12,7 @@
 int main(int argc, char* argv[])
 {
 	std::cout << str::params::STRIKE;
-	/*utility::string_t port;
+	utility::string_t port;
 	if(argc == 2)
 		port = utility::conversions::to_string_t(argv[1]);
 	else
@@ -26,5 +28,5 @@ int main(int argc, char* argv[])
 	while (line != "Q" || line !="q") {
 		std::getline(std::cin, line);
 	}
-	app::ShutDown();*/
+	app::ShutDown();
 }
