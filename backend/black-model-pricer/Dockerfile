@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
-RUN cmake -B build -DCMAKE_BUILD_TYPE=Release . && \
-    cmake --build build --target all
+RUN cmake -DCMAKE_BUILD_TYPE=Release . . && \
+    cmake --build . --target all
 
-CMD ["./build/bin/main"]
+CMD ["./main"]
