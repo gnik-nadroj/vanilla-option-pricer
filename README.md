@@ -12,7 +12,7 @@ A Vanilla option pricer that implement the Black-Scholes Model. It's implemented
 ![alt text](https://github.com/gnik-nadroj/vanilla-option-pricer/blob/main/assets/architecture_overview.png?raw=true)
 
 ## <a name='Usage'>🦄 Usage</a>
-* run `main <maze file> <algorithm>`
+* run ``
 
 ## <a name='credits'>🐵 Credits</a>
 Realize with heart by gnik-nadroj.
