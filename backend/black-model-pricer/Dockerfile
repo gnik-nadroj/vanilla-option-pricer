@@ -13,4 +13,4 @@ COPY . .
 RUN cmake -DCMAKE_BUILD_TYPE=Release . . && \
     cmake --build . --target all
 
-CMD ["./main"]
+CMD ["./bin/main"]

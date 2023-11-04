@@ -8,4 +8,4 @@ target_link_libraries(api PRIVATE black-model)
 
 include(CppRestSdk)
 
-target_link_libraries(core PRIVATE cpprestsdk::cpprest)
+target_link_libraries(api PRIVATE cpprestsdk::cpprest)

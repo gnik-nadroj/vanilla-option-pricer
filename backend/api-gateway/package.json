@@ -1,24 +1,15 @@
 {
-  "name": "mumble-api",
-  "version": "2.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "Option Pricer Api who implement Black-Scholes model",
+  "main": "ormconfig.js",
   "scripts": {
     "start": "npx ts-node-dev --respawn src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "exec": "tsc && node dist/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kingm77/vanilla-option-pricer-api.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kingm77/vanilla-option-pricer-api/issues"
-  },
-  "homepage": "https://github.com/kingm77/vanilla-option-pricer-api#readme",
   "dependencies": {
     "apollo-server-express": "^2.17.0",
     "bcryptjs": "^2.4.3",
@@ -38,7 +29,9 @@
     "redis": "3.1.1",
     "typeorm": "^0.2.25",
     "typescript": "^4.0.2",
-    "uuid": "^8.3.0",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/connect-redis": "0.0.14",
     "@types/cors": "^2.8.7",
@@ -53,3 +46,4 @@
     "ts-node-dev": "^2.0.0"
   }
 }
+

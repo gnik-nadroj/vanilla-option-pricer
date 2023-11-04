@@ -18,6 +18,10 @@ services:
       - CLIENT_DOMAIN=localhost
       - CLIENT_URL=http://localhost:3000
       - PRICING_SERVICE_URL=htpp://localhost:34566
+      - REDIS_HOST=localhost
+      - REDIS_USERNAME=root
+      - REDIS_PASSWORD=root
+      - REDIS_PORT=6379
     depends_on:
       - redis-db
 
@@ -28,7 +32,15 @@ services:
 
   redis-db:
     image: redis:latest
+    command: redis-server --requirepass root
+    environment:
+      - REDIS_REPLICATION_MODE=master
+      - REDIS_USERNAME=root
+      - REDIS_PASSWORD=root
+    ports:
+      - 6379:6379
     volumes:
-      - redis_data:/data
+    - redis_data:/data
+
 volumes:
   redis_data:
