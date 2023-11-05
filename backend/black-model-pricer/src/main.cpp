@@ -1,6 +1,3 @@
-// SimpleServer.cpp : Defines the entry point for the console application.
-//
-
 #include <api.hpp>
 
 #include <str.hpp>
