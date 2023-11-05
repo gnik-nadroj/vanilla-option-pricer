@@ -41,7 +41,7 @@ namespace pricer::api::request_handler::black_model_handler {
 		if (auto requestParams = getRequestParams(req)) {
 			auto price = pricingFunction(requestParams->at(pricer::str::params::STRIKE), requestParams->at(pricer::str::params::SPOT), 
 												requestParams->at(pricer::str::params::INTEREST_RATE), requestParams->at(pricer::str::params::VOLATILITY), requestParams->at(pricer::str::params::TIME_TO_MATURITY));
-
+			
 			jsonResponse["result"]["price"] = web::json::value::string(std::to_string(price));
 
 			responseStatus = web::http:: status_codes::OK;

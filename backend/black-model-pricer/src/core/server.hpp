@@ -9,7 +9,6 @@ namespace pricer::core {
 	{
 	public:
 		Server(const std::string& url, const web::http::experimental::listener::http_listener_config& config, router::HandleFunction hdlr);
-		~Server() {}
 		pplx::task<void> Open() { return m_listener.open(); }
 		pplx::task<void> Close() { return m_listener.close(); }
 

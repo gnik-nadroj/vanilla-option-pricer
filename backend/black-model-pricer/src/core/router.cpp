@@ -31,13 +31,17 @@ namespace pricer::core::router {
 	{
 		auto newPath {path};
 		auto currRoute = pricer::utils::f_split(path, "/");
+		std::cout << currRoute << std::endl;
 		newPath.erase(0, currRoute.size());
 
-		if (routes[method].contains(currRoute) || routes["router"].contains(currRoute)) {
+		if (routes[method].contains(currRoute)) {
 			auto handler = routes[method][currRoute];
 			handler(newPath, method, req);
+		} else if (routes["router"].contains(currRoute)) {
+			auto handler = routes[str::router::ROUTER][currRoute];
+			handler(newPath, method, req);
 		} else {
-			req.reply(web::http::status_codes::NotFound, "route not found");
+			req.reply(web::http::status_codes::NotFound, str::error::NOT_FOUND);
 		}	
 	}
 }
