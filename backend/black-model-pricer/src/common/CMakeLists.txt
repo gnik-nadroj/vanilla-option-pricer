@@ -1,5 +1,5 @@
 add_library(common 
-	"strConstant.h"
+	"str.cpp"
     "utils.cpp"
 )
 

@@ -1,4 +1,4 @@
-add_library(core "PricingServer.cpp" "Router.cpp" "RouteHandler.cpp" "RouterHandler.cpp" "FunctionHandler.cpp")
+add_library(core "server.cpp" "router.cpp")
 
 target_include_directories(core PUBLIC .)
 

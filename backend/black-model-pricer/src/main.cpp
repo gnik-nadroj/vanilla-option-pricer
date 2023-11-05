@@ -1,32 +1,29 @@
 // SimpleServer.cpp : Defines the entry point for the console application.
 //
 
-#include <Router.h>
+#include <api.hpp>
 
-#include <App.h>
+#include <str.hpp>
 
 #include <iostream>
 
-#include <strConstant.h>
 
 int main(int argc, char* argv[])
 {
-	std::cout << str::params::STRIKE;
 	utility::string_t port;
+
 	if(argc == 2)
 		port = utility::conversions::to_string_t(argv[1]);
 	else
-		port =  utility::conversions::to_string_t(str::app::PORT);
+		port =  utility::conversions::to_string_t(pricer::str::config::PORT);
 
-	app::StartServer(port);
+	pricer::api::startServer(port);
 	std::cout << "Press ENTER q or Q to exit." << std::endl;
 
-	//--- Wait Indefenintely, Untill some one has 
-	// pressed a key....and Shut the Server down
 	std::string line;
 	
 	while (line != "Q" || line !="q") {
 		std::getline(std::cin, line);
 	}
-	app::ShutDown();
+	pricer::api::shutDown();
 }

@@ -1,16 +1,14 @@
 #pragma once
-#include <map>
+
 #include <string>
-#include <vector>
 
-
-namespace utils {
+namespace pricer::utils {
 	/// <summary>
 	///		A function who calculate the cumulative normal function
 	/// </summary>
 	/// <param name="val"> some value</param>
 	/// <returns>cumulative normal function of the value</returns>
-	double N(const double& val);
+	double N(double val);
 
 	/// <summary>
 	///		A function who split a string given a delimiter and return the first occurence of the result
