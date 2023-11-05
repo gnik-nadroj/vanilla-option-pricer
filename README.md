@@ -2,7 +2,6 @@
 
 * [Description](#Description)
 * [Software Architure](#Software_Architecture)
-* [Usage](#Usage)
 * [Credits](#credits)
 
 ## <a name='Description'>🐱 Description</a>
@@ -10,9 +9,6 @@ A Vanilla option pricer that implement the Black-Scholes Model. It's implemented
 
 ## <a name='Software_Architecture'>🧱 Software Architecture</a>
 ![alt text](https://github.com/gnik-nadroj/vanilla-option-pricer/blob/main/assets/architecture_overview.png?raw=true)
-
-## <a name='Usage'>🦄 Usage</a>
-* run ``
 
 ## <a name='credits'>🐵 Credits</a>
 Realize with heart by gnik-nadroj.
