@@ -31,7 +31,6 @@ namespace pricer::core::router {
 	{
 		auto newPath {path};
 		auto currRoute = pricer::utils::f_split(path, "/");
-		std::cout << currRoute << std::endl;
 		newPath.erase(0, currRoute.size());
 
 		if (routes[method].contains(currRoute)) {
