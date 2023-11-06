@@ -7,12 +7,12 @@
 
 int main(int argc, char* argv[])
 {
-	utility::string_t port;
+	std::string port;
 
 	if(argc == 2)
 		port = utility::conversions::to_string_t(argv[1]);
 	else
-		port =  utility::conversions::to_string_t(pricer::str::config::PORT);
+		port =  pricer::str::config::PORT;
 
 	pricer::api::startServer(port);
 	std::cout << "Press ENTER q or Q to exit." << std::endl;

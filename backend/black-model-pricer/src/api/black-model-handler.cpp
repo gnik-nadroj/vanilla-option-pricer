@@ -55,10 +55,10 @@ namespace pricer::api::request_handler::black_model_handler {
 	}
 
 	void BlackModelHandler::handlePricingPut(const web::http::http_request& req){
-		return handle(req, pricer::model::black_model::put);
+		return handle(req, model::black_model::put);
 	}
 
 	void BlackModelHandler::handlePrincingCall(const web::http::http_request& req){
-		return handle(req, pricer::model::black_model::call);
+		return handle(req, model::black_model::call);
 	}
 }

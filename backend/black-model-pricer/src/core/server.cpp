@@ -3,8 +3,8 @@
 
 
 namespace pricer::core {
-	Server::Server(const std::string& url, const web::http::experimental::listener::http_listener_config& config, router::HandleFunction hdlr): 
-		m_listener(url, config), m_requestHandler{hdlr}
+	Server::Server(const std::string& url, const web::http::experimental::listener::http_listener_config& config, const router::HandleFunction& hdlr): 
+		m_listener{url, config}, m_requestHandler{std::move(hdlr)}
 	{
 		m_listener.support(web::http::methods::GET, std::bind(&Server::HandleGet, this, std::placeholders::_1));
 		m_listener.support(web::http::methods::POST, std::bind(&Server::HandlePost, this, std::placeholders::_1));

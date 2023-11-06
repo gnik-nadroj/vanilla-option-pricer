@@ -14,17 +14,17 @@ namespace pricer::core::router {
 
 	void Router::use(const std::string& path, const HandleFunction& hdlr)
 	{
-		routes[str::router::ROUTER].insert({ path, hdlr });
+		routes[str::router::ROUTER].insert({ path, std::move(hdlr) });
 	}
 
-	void Router::get(const std::string& path, const HandleFunction& hdlr )
+	void Router::get(const std::string& path, const HandleFunction& hdlr)
 	{
-		routes[str::router::GET].insert({ path, hdlr });
+		routes[str::router::GET].insert({ path, std::move(hdlr) });
 	}
 
 	void Router::post(const std::string& path, const HandleFunction& hdlr)
 	{
-		routes[str::router::POST].insert({ path, hdlr });
+		routes[str::router::POST].insert({ path, std::move(hdlr) });
 	}
 
 	void Router::operator()(const std::string& path, const std::string& method, const web::http::http_request& req)
@@ -36,7 +36,7 @@ namespace pricer::core::router {
 		if (routes[method].contains(currRoute)) {
 			auto handler = routes[method][currRoute];
 			handler(newPath, method, req);
-		} else if (routes["router"].contains(currRoute)) {
+		} else if (routes[str::router::ROUTER].contains(currRoute)) {
 			auto handler = routes[str::router::ROUTER][currRoute];
 			handler(newPath, method, req);
 		} else {

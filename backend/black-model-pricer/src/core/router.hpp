@@ -6,10 +6,23 @@
 
 namespace pricer::core::router {
 	using HandleFunction = std::function<void(const std::string& path, const std::string& method, const web::http::http_request& req)>;
+	
 	class Router
 	{
 		private:
-			std::unordered_map <std::string, std::unordered_map<std::string, HandleFunction>> routes {};
+			/*
+				the map look like that {
+											"router" => {
+												"/pricer" => Router,
+												"/black-scholes" => Router,
+											}
+											"get" => {
+												"/call" => function to price call
+												"/put" => function to price put
+											} 
+									   }
+			*/
+			std::unordered_map <std::string_view, std::unordered_map<std::string_view, HandleFunction>> routes {};
 			
 		public:
 			Router();
