@@ -25,14 +25,12 @@ namespace pricer::api {
 		serverConfig.set_timeout(utility::seconds(30));
 
 		g_http = std::make_unique<core::Server>(addr, serverConfig, generateApiRoutes());
-		g_http->Open().wait();
 
 		ucout << "Listening for requests at: " << addr << std::endl;
 	}
 
 	void shutDown() {
-		g_http->Close().wait();
-		return;
+		g_http.reset();
 	}
 
 	core::router::HandleFunction generateApiRoutes() {
@@ -49,7 +47,7 @@ namespace pricer::api {
 		});
 
 		pricerRouter.use(str::route::BLACK_SCHOLES_ROUTE, blackScholesRouter);
-
+		
 		mainRouter.use(str::route::BASE_ROUTE, pricerRouter);
 
 		return mainRouter;

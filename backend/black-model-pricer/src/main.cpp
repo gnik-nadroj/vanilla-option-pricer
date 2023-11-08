@@ -19,8 +19,9 @@ int main(int argc, char* argv[])
 
 	std::string line;
 	
-	while (line != "Q" || line !="q") {
+	while (line != "Q" && line !="q") {
 		std::getline(std::cin, line);
 	}
+
 	pricer::api::shutDown();
 }

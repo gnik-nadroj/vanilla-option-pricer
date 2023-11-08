@@ -1,6 +1,5 @@
 #include "server.hpp"
-#include "str.hpp"
-
+#include <str.hpp>
 
 namespace pricer::core {
 	Server::Server(const std::string& url, const web::http::experimental::listener::http_listener_config& config, const router::HandleFunction& hdlr): 
@@ -8,6 +7,12 @@ namespace pricer::core {
 	{
 		m_listener.support(web::http::methods::GET, std::bind(&Server::HandleGet, this, std::placeholders::_1));
 		m_listener.support(web::http::methods::POST, std::bind(&Server::HandlePost, this, std::placeholders::_1));
+		m_listener.open();
+	}
+
+	Server::~Server()
+	{
+		m_listener.close().wait();
 	}
 
 	void Server::HandleGet(const web::http::http_request& message)
